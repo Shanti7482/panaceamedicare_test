@@ -75,10 +75,10 @@ $query_builder = TRUE;
  
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => '',
+	'hostname' => getenv('DB_HOSTNAME') ?: 'localhost',
+    'username' => getenv('DB_USERNAME') ?: 'root',
+    'password' => getenv('DB_PASSWORD') ?: '',
+    'database' => getenv('DB_DATABASE') ?: '',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -94,3 +94,18 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+// $db['default'] = array(
+//     'dsn'      => '',
+//     'hostname' => getenv('DB_HOSTNAME') ?: 'localhost',
+//     'username' => getenv('DB_USERNAME') ?: 'root',
+//     'password' => getenv('DB_PASSWORD') ?: '',
+//     'database' => getenv('DB_DATABASE') ?: '',
+//     'dbdriver' => 'mysqli',
+//     'dbprefix' => '',
+//     'pconnect' => FALSE,
+//     'db_debug' => (ENVIRONMENT !== 'production'),
+//     'cache_on' => FALSE,
+//     'char_set' => 'utf8',
+//     'dbcollat' => 'utf8_general_ci'
+// );
