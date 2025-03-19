@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: my-codeigniter-app
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_DATABASE=my_database
+      - DB_USERNAME=root
+      - DB_PASSWORD=root_password
+    ports:
+      - "80:80"
+
+  db:
+    image: mysql:5.7
+    container_name: my-mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: my_database
+      MYSQL_USER: my_user
+      MYSQL_PASSWORD: my_db_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: my-phpmyadmin
+    restart: always
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root_password
+    ports:
+      - "8080:80"
+
+volumes:
+  mysql_data:
