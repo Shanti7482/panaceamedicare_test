@@ -16,6 +16,15 @@ COPY . /var/www/html/
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/
 
+# Install phpMyAdmin
+RUN apt-get update && \
+    apt-get install -y unzip wget && \
+    wget -O /tmp/phpmyadmin.zip https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.zip && \
+    unzip /tmp/phpmyadmin.zip -d /var/www/html/ && \
+    mv /var/www/html/phpMyAdmin-* /var/www/html/phpmyadmin && \
+    rm /tmp/phpmyadmin.zip && \
+    chown -R www-data:www-data /var/www/html/phpmyadmin
+
 # Expose port 80
 EXPOSE 80
 
