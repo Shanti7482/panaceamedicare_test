@@ -83,3 +83,16 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+define("HOHE_SWIPER_IAMGE", array('assets/images/banner_1.avif','assets/images/banner_2.avif','assets/images/banner_3.avif','assets/images/banner_4.avif','assets/images/banner_5.avif','assets/images/banner_6.jpeg'));
+
+define("SERVICE_IMAGE",array(array('name'=>'Gynaecology','image'=>'assets/images/services_img/service_1.webp'),
+                            array('name'=>'Urology','image'=>'assets/images/services_img/service_2.webp'),
+                            array('name'=>'Male Infertility','image'=>'assets/images/services_img/service_3.webp'),
+                            array('name'=>'IVF Fertilization','image'=>'assets/images/services_img/service_4.webp'),
+                            array('name'=>'Adult Vaccination','image'=>'assets/images/services_img/service_5.webp'),
+                            array('name'=>'Obstetrics, Gynecology & infertility (I.V.F)','image'=>'assets/images/services_img/service_6.webp'),
+                            array('name'=>'Neonatology (NICU)','image'=>'assets/images/services_img/service_7.webp'),
+                            array('name'=>'Immunisation','image'=>'assets/images/services_img/service_8.webp'),
+                            array('name'=>'Yoga & Physiotherapy','image'=>'assets/images/services_img/service_9.webp')));
